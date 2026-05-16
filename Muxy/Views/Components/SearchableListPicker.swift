@@ -3,8 +3,8 @@ import SwiftUI
 struct SearchableListPicker<Item: Identifiable, RowContent: View>: View {
     let items: [Item]
     let filterKey: (Item) -> String
-    let placeholder: LocalizedStringKey
-    let emptyLabel: LocalizedStringKey
+    let placeholder: String
+    let emptyLabel: String
     let onSelect: (Item) -> Void
     @ViewBuilder let row: (Item, Bool) -> RowContent
 
@@ -39,7 +39,7 @@ struct SearchableListPicker<Item: Identifiable, RowContent: View>: View {
             Divider().overlay(MuxyTheme.border)
 
             if filteredItems.isEmpty {
-                Text(emptyLabel)
+                Text(LocalizedStringKey(emptyLabel))
                     .font(.system(size: UIMetrics.fontBody))
                     .foregroundStyle(MuxyTheme.fgMuted)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)

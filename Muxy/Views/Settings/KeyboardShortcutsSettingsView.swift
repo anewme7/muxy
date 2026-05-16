@@ -79,7 +79,7 @@ struct KeyboardShortcutsSettingsView: View {
                 Image(systemName: "magnifyingglass")
                     .foregroundStyle(.secondary)
                     .font(.system(size: SettingsMetrics.labelFontSize))
-                TextField(LocalizedStringKey(section.searchPlaceholder), text: $searchText)
+                TextField(section.searchPlaceholder, text: $searchText)
                     .textFieldStyle(.plain)
                     .font(.system(size: SettingsMetrics.labelFontSize))
             }
