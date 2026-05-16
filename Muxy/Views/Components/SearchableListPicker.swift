@@ -3,8 +3,8 @@ import SwiftUI
 struct SearchableListPicker<Item: Identifiable, RowContent: View>: View {
     let items: [Item]
     let filterKey: (Item) -> String
-    let placeholder: String
-    let emptyLabel: String
+    let placeholder: LocalizedStringKey
+    let emptyLabel: LocalizedStringKey
     let onSelect: (Item) -> Void
     @ViewBuilder let row: (Item, Bool) -> RowContent
 

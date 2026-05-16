@@ -10,9 +10,7 @@ struct RecordingSettingsView: View {
         SettingsContainer {
             SettingsSection(
                 "Voice Recording",
-                footer: "Press the Voice Recording shortcut to dictate. "
-                    + "Muxy transcribes your speech on-device and inserts it wherever your cursor was before "
-                    + "you opened the recorder. If that target is gone, the transcript lands on your clipboard."
+                footer: "Press the Voice Recording shortcut to dictate. Muxy transcribes your speech on-device and inserts it wherever your cursor was before you opened the recorder. If that target is gone, the transcript lands on your clipboard."
             ) {
                 SettingsToggleRow(
                     label: "Press Return after inserting",
@@ -31,10 +29,9 @@ struct RecordingSettingsView: View {
         .onAppear(perform: loadLanguages)
     }
 
-    private var languageFooter: String {
+    private var languageFooter: LocalizedStringKey {
         if languages.isEmpty {
-            return "No on-device speech models are installed. "
-                + "Add a dictation language in System Settings → Keyboard → Dictation, then return here."
+            return "No on-device speech models are installed. Add a dictation language in System Settings → Keyboard → Dictation, then return here."
         }
         return "Only languages with an on-device model are listed. Transcription never leaves your Mac."
     }

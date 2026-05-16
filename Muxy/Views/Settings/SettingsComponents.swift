@@ -28,14 +28,14 @@ struct SettingsContainer<Content: View>: View {
 }
 
 struct SettingsSection<Content: View>: View {
-    let title: String
-    let footer: String?
+    let title: LocalizedStringKey
+    let footer: LocalizedStringKey?
     let showsDivider: Bool
     @ViewBuilder var content: Content
 
     init(
-        _ title: String,
-        footer: String? = nil,
+        _ title: LocalizedStringKey,
+        footer: LocalizedStringKey? = nil,
         showsDivider: Bool = true,
         @ViewBuilder content: () -> Content
     ) {
@@ -74,10 +74,10 @@ struct SettingsSection<Content: View>: View {
 }
 
 struct SettingsRow<Content: View>: View {
-    let label: String
+    let label: LocalizedStringKey
     @ViewBuilder var content: Content
 
-    init(_ label: String, @ViewBuilder content: () -> Content) {
+    init(_ label: LocalizedStringKey, @ViewBuilder content: () -> Content) {
         self.label = label
         self.content = content()
     }

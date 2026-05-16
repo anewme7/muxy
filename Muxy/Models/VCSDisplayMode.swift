@@ -7,7 +7,7 @@ enum VCSDisplayMode: String, CaseIterable, Identifiable {
 
     var id: String { rawValue }
 
-    var title: String {
+    var title: LocalizedStringKey {
         switch self {
         case .tab: "Tab"
         case .window: "Window"

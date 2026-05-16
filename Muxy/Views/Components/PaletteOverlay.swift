@@ -5,9 +5,9 @@ import SwiftUI
 /// results list, and keyboard navigation. Used by Quick Open (files) and
 /// the Worktree Switcher.
 struct PaletteOverlay<Item: Identifiable & Sendable>: View {
-    let placeholder: String
-    let emptyLabel: String
-    let noMatchLabel: String
+    let placeholder: LocalizedStringKey
+    let emptyLabel: LocalizedStringKey
+    let noMatchLabel: LocalizedStringKey
     /// Provides items for a given query. Called on every query change.
     let search: (String) async -> [Item]
     let onSelect: (Item) -> Void
@@ -142,7 +142,7 @@ struct PaletteOverlay<Item: Identifiable & Sendable>: View {
 
 struct PaletteSearchField: NSViewRepresentable {
     @Binding var text: String
-    let placeholder: String
+    let placeholder: LocalizedStringKey
     var fontSize: CGFloat = UIMetrics.fontEmphasis
     let onSubmit: () -> Void
     let onEscape: () -> Void
@@ -161,7 +161,7 @@ struct PaletteSearchField: NSViewRepresentable {
         field.focusRingType = .none
         field.font = .systemFont(ofSize: fontSize)
         field.textColor = NSColor(MuxyTheme.fg)
-        field.placeholderString = placeholder
+        field.placeholderString = String(localized: placeholder)
         field.cell?.sendsActionOnEndEditing = false
         field.onEscape = onEscape
         DispatchQueue.main.async {
@@ -177,6 +177,9 @@ struct PaletteSearchField: NSViewRepresentable {
         }
         if let field = nsView as? PaletteNSTextField {
             field.onEscape = onEscape
+        }
+        if nsView.placeholderString != String(localized: placeholder) {
+            nsView.placeholderString = String(localized: placeholder)
         }
     }
 

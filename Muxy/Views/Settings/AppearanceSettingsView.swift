@@ -108,7 +108,7 @@ struct AppearanceSettingsView: View {
             isPresented.wrappedValue.toggle()
         } label: {
             HStack(spacing: 6) {
-                Text(title)
+                Text(LocalizedStringKey(title))
                     .font(.system(size: SettingsMetrics.labelFontSize))
                     .lineLimit(1)
                 Image(systemName: "chevron.up.chevron.down")

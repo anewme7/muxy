@@ -79,7 +79,7 @@ enum AIUsageDisplayMode: String, CaseIterable, Identifiable {
 
     var id: String { rawValue }
 
-    var label: String {
+    var label: LocalizedStringKey {
         switch self {
         case .used:
             "Used"
@@ -222,7 +222,7 @@ enum AIUsageAutoRefreshInterval: Int, CaseIterable, Identifiable {
 
     var id: Int { rawValue }
 
-    var label: String {
+    var label: LocalizedStringKey {
         switch self {
         case .fiveMinutes:
             "5 min"

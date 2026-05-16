@@ -23,7 +23,7 @@ final class UIScale {
             }
         }
 
-        var title: String {
+        var title: LocalizedStringKey {
             switch self {
             case .regular: "Default"
             case .large: "Large"

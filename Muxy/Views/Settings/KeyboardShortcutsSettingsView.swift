@@ -7,14 +7,14 @@ struct KeyboardShortcutsSettingsView: View {
 
         var id: String { rawValue }
 
-        var title: String {
+        var title: LocalizedStringKey {
             switch self {
             case .app: "App Shortcuts"
             case .custom: "Custom Commands"
             }
         }
 
-        var searchPlaceholder: String {
+        var searchPlaceholder: LocalizedStringKey {
             switch self {
             case .app: "Search shortcuts"
             case .custom: "Search commands"
@@ -79,7 +79,7 @@ struct KeyboardShortcutsSettingsView: View {
                 Image(systemName: "magnifyingglass")
                     .foregroundStyle(.secondary)
                     .font(.system(size: SettingsMetrics.labelFontSize))
-                TextField(section.searchPlaceholder, text: $searchText)
+                TextField(LocalizedStringKey(section.searchPlaceholder), text: $searchText)
                     .textFieldStyle(.plain)
                     .font(.system(size: SettingsMetrics.labelFontSize))
             }
@@ -376,7 +376,7 @@ private struct ShortcutRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             HStack {
-                Text(action.displayName)
+                Text(LocalizedStringKey(action.displayName))
                     .font(.system(size: SettingsMetrics.labelFontSize))
                     .frame(maxWidth: .infinity, alignment: .leading)
 
@@ -640,7 +640,7 @@ private struct DeleteAllCommandShortcutsRow: View {
         .padding(.vertical, SettingsMetrics.rowVerticalPadding)
     }
 
-    private var title: String {
+    private var title: LocalizedStringKey {
         if isConfirming {
             return "Confirm Delete All (\(secondsRemaining))"
         }

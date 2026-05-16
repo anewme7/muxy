@@ -6,7 +6,7 @@ enum SidebarCollapsedStyle: String, CaseIterable, Identifiable {
 
     var id: String { rawValue }
 
-    var title: String {
+    var title: LocalizedStringKey {
         switch self {
         case .hidden: "Hidden"
         case .icons: "Icons"
@@ -30,7 +30,7 @@ enum SidebarExpandedStyle: String, CaseIterable, Identifiable {
 
     var id: String { rawValue }
 
-    var title: String {
+    var title: LocalizedStringKey {
         switch self {
         case .icons: "Icons"
         case .wide: "Wide"

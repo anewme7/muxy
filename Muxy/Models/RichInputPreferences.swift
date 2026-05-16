@@ -23,7 +23,7 @@ enum RichInputPanelPosition: String, CaseIterable, Identifiable {
 
     var id: String { rawValue }
 
-    var displayName: String {
+    var displayName: LocalizedStringKey {
         switch self {
         case .right: "Right"
         case .bottom: "Bottom"

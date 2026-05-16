@@ -14,7 +14,7 @@ final class EditorSettings {
 
         var id: String { rawValue }
 
-        var displayName: String {
+        var displayName: LocalizedStringKey {
             switch self {
             case .builtIn:
                 "Built-in Editor"

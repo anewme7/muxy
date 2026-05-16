@@ -3,9 +3,8 @@ import Network
 import SwiftUI
 
 struct MobileSettingsView: View {
-    private static let pairingFooter = """
-    Scan this with the Muxy mobile app to add this Mac. \
-    The QR carries no token — first-time pairing still needs your approval.
+    private static let pairingFooter: LocalizedStringKey = """
+    Scan this with the Muxy mobile app to add this Mac. The QR carries no token — first-time pairing still needs your approval.
     """
 
     @Bindable private var service = MobileServerService.shared
@@ -143,7 +142,7 @@ struct MobileSettingsView: View {
     private func commitPort() -> Bool {
         let trimmed = portText.trimmingCharacters(in: .whitespaces)
         guard let value = UInt16(trimmed), MobileServerService.isValid(port: value) else {
-            portValidationError = "Enter a port between \(MobileServerService.minPort) and \(MobileServerService.maxPort)."
+            portValidationError = String(localized: "Enter a port between \(MobileServerService.minPort) and \(MobileServerService.maxPort).")
             return false
         }
         portValidationError = nil

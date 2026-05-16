@@ -8,7 +8,7 @@ enum AIAssistantProvider: String, CaseIterable, Identifiable, Codable {
 
     var id: String { rawValue }
 
-    var displayName: String {
+    var displayName: LocalizedStringKey {
         switch self {
         case .claude: "Claude Code"
         case .codex: "Codex"

@@ -112,8 +112,7 @@ struct EditorSettingsView: View {
 
         SettingsSection(
             "Rich Input",
-            footer: "Inline File Path keeps multiple images perfectly ordered with text and Enter. "
-                + "Use Clipboard Paste if your TUI doesn't recognize image paths.",
+            footer: "Inline File Path keeps multiple images perfectly ordered with text and Enter. Use Clipboard Paste if your TUI doesn't recognize image paths.",
             showsDivider: showsAppearanceSection
         ) {
             SettingsRow("Image Submission") {

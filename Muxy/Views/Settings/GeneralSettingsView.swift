@@ -23,8 +23,7 @@ struct GeneralSettingsView: View {
         SettingsContainer {
             SettingsSection(
                 "Updates",
-                footer: "The Beta channel ships every change merged to main and may be unstable. "
-                    + "Switch back to Stable to receive only tagged releases."
+                footer: "The Beta channel ships every change merged to main and may be unstable. Switch back to Stable to receive only tagged releases."
             ) {
                 SettingsRow("Update channel") {
                     Picker("", selection: channelBinding) {
@@ -76,8 +75,7 @@ struct GeneralSettingsView: View {
 
             SettingsSection(
                 "Worktrees",
-                footer: "Muxy creates a project-named subfolder inside this folder. "
-                    + "Projects can still override this from the new worktree dialog."
+                footer: "Muxy creates a project-named subfolder inside this folder. Projects can still override this from the new worktree dialog."
             ) {
                 worktreeLocationControl
             }
@@ -99,8 +97,7 @@ struct GeneralSettingsView: View {
             if sentry.hasDSN {
                 SettingsSection(
                     "Diagnostics",
-                    footer: "Anonymous crash reports help us fix bugs. "
-                        + "Reports never include project paths, file contents, or personal data.",
+                    footer: "Anonymous crash reports help us fix bugs. Reports never include project paths, file contents, or personal data.",
                     showsDivider: false
                 ) {
                     SettingsToggleRow(
@@ -133,10 +130,9 @@ struct GeneralSettingsView: View {
         ProjectPickerMode(rawValue: projectPickerModeRaw) ?? .custom
     }
 
-    private var projectsFooter: String {
+    private var projectsFooter: LocalizedStringKey {
         if projectPickerMode == .custom {
-            return "Muxy Picker starts in this default location. Use App Default to reset it. "
-                + "Projects can stay in the sidebar after closing their last tab."
+            return "Muxy Picker starts in this default location. Use App Default to reset it. Projects can stay in the sidebar after closing their last tab."
         }
         return "Muxy Picker can use Finder or Muxy's picker. Projects can stay in the sidebar after closing their last tab."
     }
@@ -200,7 +196,7 @@ struct GeneralSettingsView: View {
         panel.canChooseDirectories = true
         panel.canChooseFiles = false
         panel.allowsMultipleSelection = false
-        panel.message = "Select the default folder for new worktrees"
+        panel.message = String(localized: "Select the default folder for new worktrees")
         if let path = WorktreeLocationResolver.normalizedPath(defaultWorktreeParentPath) {
             panel.directoryURL = URL(fileURLWithPath: path, isDirectory: true)
         }

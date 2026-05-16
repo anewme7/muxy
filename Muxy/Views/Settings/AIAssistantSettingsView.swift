@@ -31,8 +31,7 @@ struct AIAssistantSettingsView: View {
         SettingsContainer {
             SettingsSection(
                 "Provider",
-                footer: "Choose the agentic CLI tool used to generate commit messages and pull request drafts. "
-                    + "The tool runs locally with your existing authentication."
+                footer: "Choose the agentic CLI tool used to generate commit messages and pull request drafts. The tool runs locally with your existing authentication."
             ) {
                 SettingsRow("Tool") {
                     Picker("", selection: $providerRaw) {
@@ -67,8 +66,7 @@ struct AIAssistantSettingsView: View {
 
             SettingsSection(
                 "Pull Request Prompt",
-                footer: "Guides the model when generating PR title and description. "
-                    + "Output is parsed as JSON; do not change the response format."
+                footer: "Guides the model when generating PR title and description. Output is parsed as JSON; do not change the response format."
             ) {
                 promptEditor(
                     text: prPromptBinding,
@@ -94,11 +92,7 @@ struct AIAssistantSettingsView: View {
                     .textFieldStyle(.roundedBorder)
                     .frame(width: SettingsMetrics.controlWidth)
             }
-            Text(
-                "Runs through your interactive login shell so PATH and aliases resolve. "
-                    + "Muxy pipes the full prompt to stdin and reads the response from stdout. "
-                    + "Provide arguments that make the tool emit only the response (no banners or progress)."
-            )
+            Text("Runs through your interactive login shell so PATH and aliases resolve. Muxy pipes the full prompt to stdin and reads the response from stdout. Provide arguments that make the tool emit only the response (no banners or progress).")
             .font(.system(size: SettingsMetrics.footnoteFontSize))
             .foregroundStyle(.secondary)
             .fixedSize(horizontal: false, vertical: true)
