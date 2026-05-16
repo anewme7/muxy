@@ -1,4 +1,5 @@
 import AppKit
+import SwiftUI
 import os
 
 private let logger = Logger(subsystem: "app.muxy", category: "EditorSettings")

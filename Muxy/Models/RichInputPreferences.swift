@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 enum RichInputPreferences {
     static let fontSizeKey = "muxy.richInput.fontSize"

@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 enum AIAssistantProvider: String, CaseIterable, Identifiable, Codable {
     case claude

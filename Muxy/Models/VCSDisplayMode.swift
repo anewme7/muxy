@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 enum VCSDisplayMode: String, CaseIterable, Identifiable {
     case tab

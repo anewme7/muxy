@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 enum ProjectPickerMode: String, CaseIterable, Identifiable {
     case custom

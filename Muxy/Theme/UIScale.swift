@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 import os
 
 private let logger = Logger(subsystem: "app.muxy", category: "UIScale")

@@ -1,4 +1,5 @@
 import Combine
+import SwiftUI
 import Foundation
 import os
 import Sparkle

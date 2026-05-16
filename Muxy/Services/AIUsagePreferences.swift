@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 func canonicalAIUsageProviderID(_ providerID: String) -> String {
     let normalized = providerID.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()

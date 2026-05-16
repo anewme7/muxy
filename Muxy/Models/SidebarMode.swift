@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 enum SidebarCollapsedStyle: String, CaseIterable, Identifiable {
     case hidden
