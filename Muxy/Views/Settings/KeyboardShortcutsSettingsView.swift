@@ -138,8 +138,8 @@ struct KeyboardShortcutsSettingsView: View {
         }
     }
 
-    private func categorySection(title: LocalizedStringKey, actions: [ShortcutAction], isLast: Bool) -> some View {
-        SettingsSection(title, showsDivider: !isLast) {
+    private func categorySection(title: String, actions: [ShortcutAction], isLast: Bool) -> some View {
+        SettingsSection(LocalizedStringKey(title), showsDivider: !isLast) {
             ForEach(actions) { action in
                 ShortcutRow(
                     action: action,
