@@ -95,7 +95,7 @@ struct SettingsRow<Content: View>: View {
 }
 
 struct SettingsToggleRow: View {
-    let label: String
+    let label: LocalizedStringKey
     @Binding var isOn: Bool
 
     var body: some View {
@@ -111,7 +111,7 @@ struct SettingsToggleRow: View {
 struct SettingsPickerRow<Option: CaseIterable & Identifiable & RawRepresentable>: View
     where Option.RawValue == String, Option.AllCases: RandomAccessCollection
 {
-    let label: String
+    let label: LocalizedStringKey
     @Binding var selection: String
     var width: CGFloat = SettingsMetrics.controlWidth
 
