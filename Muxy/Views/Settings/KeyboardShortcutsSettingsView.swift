@@ -138,7 +138,7 @@ struct KeyboardShortcutsSettingsView: View {
         }
     }
 
-    private func categorySection(title: String, actions: [ShortcutAction], isLast: Bool) -> some View {
+    private func categorySection(title: LocalizedStringKey, actions: [ShortcutAction], isLast: Bool) -> some View {
         SettingsSection(title, showsDivider: !isLast) {
             ForEach(actions) { action in
                 ShortcutRow(
